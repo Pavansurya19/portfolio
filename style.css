@@ -409,3 +409,27 @@
   .signup-link a:hover {
     text-decoration: underline;
   }
+.view-mode-toggle {
+  display: flex; justify-content: flex-end; align-items: center;
+  gap: 1.2rem; padding: 0.4rem 2.3rem 0.7rem 0;
+  position: fixed; top: 0; right: 0; z-index: 1000;
+}
+.view-mode-toggle label {
+  font-size: 1.02rem; color: #18a3c5; font-weight:500; cursor:pointer;
+}
+.view-mode-toggle select {
+  font-size: 1.03rem;
+  padding: 0.11em 0.84em;
+  border-radius: 12px;
+  border: 1.5px solid #18a3c5;
+  background: #181b22;
+  color: #f3f6fa;
+}
+.view-container {
+  margin: 0 auto; transition: max-width 0.3s, border 0.3s;
+}
+.view-container.phone { max-width: 410px; border: 2px dashed #18a3c5; border-radius: 17px;}
+.view-container.lap { max-width: 1200px; border: none;}
+@media (max-width:500px){
+  .view-mode-toggle {padding-right:0.5rem;}
+}
