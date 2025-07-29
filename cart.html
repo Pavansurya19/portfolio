@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- ✅ Mobile responsive -->
   <title>Your Cart | Revive</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <!-- Navbar -->
@@ -11,6 +13,11 @@
     <a href="main page.html" class="logo">Revive</a>
     <ul>
       <li><a href="login.html">Login</a></li>
+      <li>
+        <a href="cart.html" class="cart-icon" title="View Cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </li>
     </ul>
   </nav>
 
@@ -18,9 +25,11 @@
   <section class="cart-page">
     <h1>Your Rental Cart</h1>
     <div id="cartContent" class="cart-placeholder"></div>
+    
     <div id="confirmSection" style="margin-top: 30px; display: none;">
       <button id="confirmButton">Confirm Rent</button>
     </div>
+    
     <div id="thankYouMessage" style="margin-top: 20px; font-size: 1.1rem; color: #00ffcc;"></div>
   </section>
 
@@ -40,21 +49,22 @@
 
     if (item) {
       cartDiv.innerHTML = `
-        <img src="${item}" alt="Selected Item" style="max-width: 200px; border-radius: 10px; margin-bottom: 20px;">
+        <img src="${item}" alt="Selected Item" style="max-width: 200px; border-radius: 10px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;">
         <p>You've selected this item for rent.</p>
       `;
       confirmSection.style.display = "block";
     } else {
       cartDiv.innerHTML = `
         <p>No items selected yet.</p>
-        <a href="rent.html"><button>Go Back to Rent</button></a>
+        <a href="rent.html"><button style="margin-top: 15px;">Go Back to Rent</button></a>
       `;
     }
 
-    confirmButton.addEventListener("click", () => {
+    confirmButton?.addEventListener("click", () => {
       localStorage.removeItem("cartItem");
       thankYouMessage.innerText = "✅ Thank you for renting. Your order will be delivered in two days.";
-      confirmSection.style.display = "none"; // hide button
+      confirmSection.style.display = "none";
+      cartDiv.innerHTML = '';
     });
   </script>
 </body>
