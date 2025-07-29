@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- ✅ Ensures mobile scaling -->
   <title>Login | Revive</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -22,7 +23,8 @@
   <!-- Login Section -->
   <section class="login-page">
     <h1>Login to Revive</h1>
-    <form class="login-form">
+    
+    <form class="login-form" onsubmit="return validateLogin(event)">
       <label for="email">Email Address:</label>
       <input type="email" id="email" placeholder="Enter your email" required />
 
@@ -39,5 +41,27 @@
   <footer>
     <p>&copy; 2025 Revive Clothing. All rights reserved.</p>
   </footer>
+
+  <!-- Optional JS for form validation -->
+  <script>
+    function validateLogin(event) {
+      event.preventDefault(); // Prevent form from refreshing the page
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (!email || !password) {
+        alert("Please fill in all fields.");
+        return false;
+      }
+
+      // Example: simulate login success
+      alert("Login successful!");
+      // Redirect or perform login logic here
+
+      // Reset form
+      document.querySelector(".login-form").reset();
+      return false;
+    }
+  </script>
 </body>
 </html>
