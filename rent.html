@@ -1,59 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- ✅ Makes it mobile-friendly -->
   <title>Rent Clothes | Revive</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+  <!-- Navbar -->
   <nav>
     <a href="main page.html" class="logo">Revive</a>
     <ul>
       <li><a href="login.html">Login</a></li>
+      <li>
+        <a href="cart.html" class="cart-icon" title="View Cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </li>
     </ul>
   </nav>
 
+  <!-- Rent Section -->
   <section class="rent-page">
     <h1>Rent Ethical Fashion</h1>
+
     <div class="gallery">
       <div class="item">
-        <img src="download (1).jpeg" alt="Ethical Dress 1">
+        <img src="download (1).jpeg" alt="Ethical Dress 1" />
         <button onclick="addToCart('download (1).jpeg')">Rent Now</button>
       </div>
       <div class="item">
-        <img src="download.jpeg" alt="Ethical Dress 2">
+        <img src="download.jpeg" alt="Ethical Dress 2" />
         <button onclick="addToCart('download.jpeg')">Rent Now</button>
       </div>
       <div class="item">
-        <img src="images.jpeg" alt="Ethical Dress 3">
+        <img src="images.jpeg" alt="Ethical Dress 3" />
         <button onclick="addToCart('images.jpeg')">Rent Now</button>
       </div>
       <div class="item">
-        <img src="Gemini.png" alt="Ethical Dress 4">
+        <img src="Gemini.png" alt="Ethical Dress 4" />
         <button onclick="addToCart('Gemini.png')">Rent Now</button>
       </div>
       <div class="item">
-        <img src="image2.jpg" alt="Ethical Dress 5">
+        <img src="image2.jpg" alt="Ethical Dress 5" />
         <button onclick="addToCart('image2.jpg')">Rent Now</button>
       </div>
       <div class="item">
-        <img src="images (1).jpeg" alt="Ethical Dress 6">
+        <img src="images (1).jpeg" alt="Ethical Dress 6" />
         <button onclick="addToCart('images (1).jpeg')">Rent Now</button>
       </div>
       <div class="item">
-        <img src="images (2).jpeg" alt="Ethical Dress 7">
+        <img src="images (2).jpeg" alt="Ethical Dress 7" />
         <button onclick="addToCart('images (2).jpeg')">Rent Now</button>
       </div>
       <div class="item">
-        <img src="images (3).jpeg" alt="Ethical Dress 8">
+        <img src="images (3).jpeg" alt="Ethical Dress 8" />
         <button onclick="addToCart('images (3).jpeg')">Rent Now</button>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Revive Clothing. All rights reserved.</p>
   </footer>
+
+  <!-- JavaScript -->
   <script>
     function addToCart(imageSrc) {
       localStorage.setItem("cartItem", imageSrc);
