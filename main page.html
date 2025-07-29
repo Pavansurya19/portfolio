@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Revive | Sustainable Fashion</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -11,8 +12,8 @@
   <nav>
     <a href="main page.html" class="logo">Revive</a>
     <ul>
+      <li><a href="login.html">Login</a></li>
       <li>
-        <a href="login.html">Login </a>
         <a href="cart.html" class="cart-icon" title="View Cart">
           <i class="fas fa-shopping-cart"></i>
         </a>
@@ -26,7 +27,7 @@
       <h1>Welcome to Revive</h1>
       <p>Swap. Rent. Repeat. Revive your style and the planet.</p>
 
-      <!-- Swap & Rent Buttons on Image -->
+      <!-- Swap & Rent Buttons -->
       <div class="hero-buttons">
         <a href="swap.html" class="hero-btn">Swap</a>
         <a href="rent.html" class="hero-btn">Rent</a>
@@ -39,24 +40,4 @@
     <p>&copy; 2025 Revive Clothing. All rights reserved.</p>
   </footer>
 </body>
-  <div class="view-mode-toggle">
-  <label for="viewModeSelect"><i class="fa fa-eye"></i> View as: </label>
-  <select id="viewModeSelect">
-    <option value="lap">Laptop</option>
-    <option value="phone">Phone</option>
-  </select>
-</div>
-<script>
-  // Ensure your main site content is inside a div with class="view-container"!
-  const container = document.querySelector('.view-container');
-  const selector = document.getElementById('viewModeSelect');
-  // Check if already in phone size (real mobile) -- start with native
-  function setViewMode(mode) {
-    container.classList.remove('phone','lap');
-    container.classList.add(mode);
-  }
-  // Set default mode as "lap"
-  setViewMode('lap');
-  selector.addEventListener('change', e => setViewMode(e.target.value));
-</script>
 </html>
