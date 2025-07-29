@@ -39,4 +39,24 @@
     <p>&copy; 2025 Revive Clothing. All rights reserved.</p>
   </footer>
 </body>
+  <div class="view-mode-toggle">
+  <label for="viewModeSelect"><i class="fa fa-eye"></i> View as: </label>
+  <select id="viewModeSelect">
+    <option value="lap">Laptop</option>
+    <option value="phone">Phone</option>
+  </select>
+</div>
+<script>
+  // Ensure your main site content is inside a div with class="view-container"!
+  const container = document.querySelector('.view-container');
+  const selector = document.getElementById('viewModeSelect');
+  // Check if already in phone size (real mobile) -- start with native
+  function setViewMode(mode) {
+    container.classList.remove('phone','lap');
+    container.classList.add(mode);
+  }
+  // Set default mode as "lap"
+  setViewMode('lap');
+  selector.addEventListener('change', e => setViewMode(e.target.value));
+</script>
 </html>
