@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart | Revive</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <a href="main page.html" class="logo">Revive</a>
+    <ul>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Cart Section -->
+  <section class="cart-page">
+    <h1>Your Rental Cart</h1>
+    <div id="cartContent" class="cart-placeholder"></div>
+    <div id="confirmSection" style="margin-top: 30px; display: none;">
+      <button id="confirmButton">Confirm Rent</button>
+    </div>
+    <div id="thankYouMessage" style="margin-top: 20px; font-size: 1.1rem; color: #00ffcc;"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Revive Clothing. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const cartDiv = document.getElementById("cartContent");
+    const confirmSection = document.getElementById("confirmSection");
+    const confirmButton = document.getElementById("confirmButton");
+    const thankYouMessage = document.getElementById("thankYouMessage");
+
+    const item = localStorage.getItem("cartItem");
+
+    if (item) {
+      cartDiv.innerHTML = `
+        <img src="${item}" alt="Selected Item" style="max-width: 200px; border-radius: 10px; margin-bottom: 20px;">
+        <p>You've selected this item for rent.</p>
+      `;
+      confirmSection.style.display = "block";
+    } else {
+      cartDiv.innerHTML = `
+        <p>No items selected yet.</p>
+        <a href="rent.html"><button>Go Back to Rent</button></a>
+      `;
+    }
+
+    confirmButton.addEventListener("click", () => {
+      localStorage.removeItem("cartItem");
+      thankYouMessage.innerText = "✅ Thank you for renting. Your order will be delivered in two days.";
+      confirmSection.style.display = "none"; // hide button
+    });
+  </script>
+</body>
+</html>

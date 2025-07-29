@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Revive – Product Information</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --main-bg: #111318;
+      --panel-bg: #191b22;
+      --section-bg: #20232b;
+      --accent-main: #18a3c5;
+      --accent-soft: #e0c37d;
+      --text-main: #f3f6fa;
+      --text-accent: #be9d42;
+      --text-alt: #a8b0b8;
+      --shadow: 0 7px 30px #19204044;
+    }
+    * { margin:0; padding:0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+      min-height:100vh;
+      background:var(--main-bg);
+      color:var(--text-main);
+      letter-spacing: 0.01em;
+      font-size: 1.04rem;
+    }
+    .hero {
+      width: 100%;
+      padding: 2.3rem 1rem 1.4rem 1rem;
+      background: var(--panel-bg);
+      border-radius: 0 0 28px 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+      animation: fadeInDown 1.3s;
+      border-bottom: 4px solid var(--accent-main);
+    }
+    .hero-title {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--accent-main);
+      letter-spacing: 1px;
+    }
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-alt);
+      background: rgba(26,28,34,0.35);
+      display: inline-block;
+      padding: 1.09rem 1.2rem 0.92rem 1.2rem;
+      border-radius: 16px;
+      margin-top: 1em;
+    }
+    .product-showcase {
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: center;
+      gap: 2.8rem;
+      margin: 2.2rem auto 2.5rem auto;
+      max-width: 1120px;
+    }
+    .product-img-wrapper {
+      background: var(--section-bg);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      padding: 2.2rem 2.2rem 1rem 2.2rem;
+      min-width: 320px; min-height: 390px;
+      display: flex; align-items: center; justify-content: center;
+      animation: fadeIn 1.6s;
+    }
+    .product-img-wrapper img {
+      max-width: 260px;
+      border-radius: 12px;
+      box-shadow: 0 5px 36px #161b2650;
+      border: 1px solid var(--accent-main);
+      background: #181b22;
+    }
+    .product-details {
+      flex: 1;
+      background: var(--section-bg);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 2rem 2.5rem 2rem 2.5rem;
+      min-width: 310px;
+      animation: fadeInRight 1.5s;
+      display: flex; flex-direction:column; justify-content: center;
+      max-width: 430px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: #313042;
+      border-radius: 17px;
+      padding: 0.35rem 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.63rem;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+    .product-title {
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: var(--accent-main);
+      margin-bottom: 0.57rem;
+    }
+    .product-desc {
+      font-size:1.04rem;
+      color:var(--text-main);
+      margin-bottom:1.1rem;
+      line-height:1.67;
+    }
+    .features-list {
+      margin-top: 1.05rem;
+      margin-bottom: 1.2rem;
+      list-style-position: inside;
+      text-align: left;
+      padding-left: 1rem;
+    }
+    .features-list li {
+      margin:0.37rem 0;
+      color:var(--text-accent);
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .features-list li i { 
+      color: var(--accent-main); margin-right:0.7em;
+    }
+    .artisan-section {
+      text-align: center;
+      background: var(--panel-bg);
+      margin: 2.4rem auto 1.7rem auto;
+      border-radius:13px;
+      padding: 2.2rem 1rem 2.8rem 1rem;
+      max-width:730px;
+      box-shadow:0 3px 22px #18203319;
+    }
+    .artisan-img {
+      border-radius: 50%;
+      width: 88px; height: 88px;
+      border: 2px solid var(--accent-main);
+      object-fit: cover;
+      margin-bottom: 0.8rem;
+    }
+    .artisan-name {
+      font-size:1.18rem;
+      font-weight:700;
+      color:var(--accent-main);
+      margin-bottom:.18rem;
+    }
+    .artisan-desc {
+      color: var(--text-alt);
+      font-size: 1.02rem;
+      max-width:420px;
+      margin: 0.38rem auto;
+      line-height:1.65;
+    }
+    .social-icons {
+      margin-top:1.22rem;
+      font-size:1.37rem;
+      display: flex; justify-content:center; gap:1.48rem;
+    }
+    .social-icons a {
+      color: var(--accent-main);
+      transition: color 0.17s, transform 0.12s;
+      opacity: 0.86;
+    }
+    .social-icons a:hover {
+      color: var(--accent-soft);
+      transform: scale(1.16);
+      opacity: 1;
+    }
+    /* Contact Section */
+    .contact-section {
+      max-width:730px; margin:2rem auto 1.5rem;
+      text-align:center;
+      color: var(--text-alt);
+    }
+    .contact-section h3 {
+      color: var(--accent-main);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .contact-icons {
+      font-size: 1.6rem; 
+      display: flex; 
+      justify-content: center; 
+      gap: 2.8rem;
+    }
+    .contact-icons a {
+      color: var(--accent-main);
+      transition: color 0.21s, transform 0.14s;
+      opacity: 0.93;
+    }
+    .contact-icons a:hover {
+      color: var(--accent-soft);
+      opacity: 1;
+      transform: scale(1.18);
+    }
+    .end-footer {
+      margin-top:1.6rem;
+      padding:1.3rem 0;
+      background:rgba(30,36,48,0.77);
+      border-radius: 12px 12px 0 0;
+      text-align: center;
+      color: var(--text-accent);
+      font-size: 1.03rem;
+      letter-spacing: 0.03em;
+      box-shadow: 0 -2px 12px #191b2244;
+    }
+    @media (max-width: 900px) {
+      .product-showcase {flex-direction:column; gap:2rem;}
+      .product-img-wrapper {min-width:200px;}
+      .product-details {max-width:100%;}
+    }
+    @media (max-width: 580px) {
+      .hero-title { font-size:1.18rem;}
+      .product-title{ font-size:.93rem;}
+      .product-details {padding:1rem;}
+      .product-img-wrapper{padding:.36rem;}
+      .artisan-section{padding:1.3rem .1rem 1.6rem .1rem;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <div class="hero" data-aos="fade-down">
+    <h1 class="hero-title animate__animated animate__fadeInDown">
+      Revive &ndash; Your Elegant Choice
+    </h1>
+    <p class="hero-desc animate__animated animate__fadeInUp animate__delay-1s">
+      Thank you for choosing the <b>Revive</b>. <br>
+      This piece is handcrafted in Bengaluru by <span style="color:var(--accent-main);font-weight:600;">Amit Verma</span>, blending Indian tradition, sophistication, and everyday comfort. <br>
+      Your support empowers craftsmanship that matters.
+    </p>
+  </div>
+  <!-- Product Showcase -->
+  <div class="product-showcase" data-aos="fade-up">
+    <div class="product-img-wrapper animate__animated animate__fadeIn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Traditional_Kurta_of_India.jpg" alt="Premium Kurta Product">
+    </div>
+    <div class="product-details">
+        <div class="badge"><i class="fas fa-star"></i> 4.9/5 (1,200+ Reviews)</div>
+        <div class="product-title">Revive’s Kurta</div>
+        <div class="product-desc">
+          The  Revive Men’s Kurta is more than just apparel; it represents a rich heritage of Indian craftsmanship. Hand-embroidered in Bengaluru, a delicate and intricate embroidery technique that dates back several centuries. Wearing this kurta connects you to a profound cultural legacy, symbolizing the importance of preserving traditional art forms in the modern world. Its breathable linen-cotton blend ensures comfort while honoring the classic aesthetics of ethnic Indian fashion, making it ideal for both everyday elegance and special occasions.
+        </div>
+        <ul class="features-list">
+            <li><i class="fa fa-check-circle"></i> Premium linen-cotton blend</li>
+            <li><i class="fa fa-check-circle"></i> Four signature colorways</li>
+            <li><i class="fa fa-check-circle"></i> Sizes: S / M / L / XL / XXL</li>
+            <li><i class="fa fa-check-circle"></i> Breathable &amp; low-maintenance</li>
+            <li><i class="fa fa-check-circle"></i> Free express shipping & returns</li>
+        </ul>
+    </div>
+  </div>
+  <!-- Artisan Spotlight -->
+  <div class="artisan-section" data-aos="zoom-in-up">
+    <img src="generated_image.png" alt="Artisan Amit Verma" class="artisan-img animate__animated animate__fadeIn">
+    <div class="artisan-name">Amit Verma</div>
+    <div class="artisan-desc">
+      Every Revive Kurta is a testament to Amit’s skills, handed down over generations.<br>
+      We hope you’ll cherish wearing a garment that’s made by hand and heart.
+    </div>
+    <div class="social-icons">
+      <a href="mailto:Revive@ethical.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <!-- Contact Us Section -->
+  <div class="contact-section" data-aos="fade-up">
+    <h3>Contact Us</h3>
+    <div class="contact-icons">
+      <a href="main page.html" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+      <a href="mailto:Revive@ethical.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="end-footer">
+    &copy; 2025 Revive Clothing. All rights reserved.
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1100, once: true, offset: 70 });
+  </script>
+</body>
+</html>
