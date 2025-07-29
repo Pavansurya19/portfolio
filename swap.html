@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- ✅ Mobile responsiveness -->
   <title>Swap Clothes | Revive</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -29,7 +30,7 @@
       <input type="file" id="swap-image" accept="image/*" required />
       
       <label for="description">Description:</label>
-      <textarea id="description" placeholder="Describe the item, size, condition..." rows="4"></textarea>
+      <textarea id="description" placeholder="Describe the item, size, condition..." rows="4" required></textarea>
       
       <button type="submit">Submit for Swap</button>
     </form>
@@ -46,8 +47,16 @@
   <script>
     document.getElementById("swapForm").addEventListener("submit", function (e) {
       e.preventDefault();
+      const imageInput = document.getElementById("swap-image");
+      const descriptionInput = document.getElementById("description");
       const message = document.getElementById("swap-message");
-      message.textContent = "✅ Your swap was accepted and we're trying to match it with others.";
+
+      if (imageInput.files.length > 0 && descriptionInput.value.trim()) {
+        message.textContent = "✅ Your swap was accepted and we're trying to match it with others.";
+      } else {
+        message.textContent = "⚠️ Please fill out all required fields.";
+        message.style.color = "orange";
+      }
     });
   </script>
 </body>
